@@ -86,7 +86,7 @@ RUN apt-get install -y dos2unix \
 # are copied in Windows
 RUN find /opt/code/python-ismrmrd-server -name *.sh -exec chmod +x {} \;
 
-RUN apt-get update && apt-get install libhdf5-dev libxml2-dev libxslt1-dev libboost-all-dev libfftw3-dev libpugixml-dev
+RUN apt-get update && apt-get install --no-install-recommends -y libxml2-dev libfftw3-dev libpugixml-dev
 # Cleanup files not required after installation
 RUN  apt-get remove git -y \
      && apt-get clean \
